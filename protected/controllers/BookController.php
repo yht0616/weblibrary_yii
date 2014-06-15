@@ -153,7 +153,7 @@ class BookController extends Controller
       else
       {
         $search = $_POST['search'];
-		$model= Book::model()->with('authors')->find("t.name LIKE '$search%'");
+		$model= Book::model()->with('authors')->find("t.name LIKE '$search%' OR authors.name LIKE '$search%'");
       }
 		$this->render('index',array(
 			'authors'=>$model,

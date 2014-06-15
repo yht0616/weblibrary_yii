@@ -59,12 +59,6 @@
       {?>
         <?php echo CHtml::link('Добавить автора', Yii::app()->createUrl('author/create'),array('class' => 'item')) ?>
 <?php } ?>
-<div class="item">
- <form action= <?php echo Yii::app()->createUrl('author/index') ?> method='POST'>
- <div class="ui input"><input type="search"  name='search' placeholder="Найти автора"></div>
- </form>
-  </div>
-
     </div>
   </div>
 </div>

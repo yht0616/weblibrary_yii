@@ -2591,3 +2591,51 @@ REQUEST_URI=/weblibrary/index.php?r=author/index
 in /var/www/weblibrary/protected/views/author/index.php (34)
 in /var/www/weblibrary/protected/controllers/AuthorController.php (136)
 in /var/www/weblibrary/index.php (13)
+2014/06/16 00:03:55 [error] [php] Use of undefined constant to_sql - assumed 'to_sql' (/var/www/weblibrary/protected/controllers/BookController.php:156)
+Stack trace:
+#0 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): BookController->runAction()
+#1 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): BookController->filterAccessControl()
+#4 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(265): BookController->runActionWithFilters()
+#7 /var/www/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): BookController->run()
+#8 /var/www/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/weblibrary/index.php(13): CWebApplication->run()
+REQUEST_URI=/weblibrary/index.php?r=book/index
+in /var/www/weblibrary/protected/controllers/BookController.php (156)
+in /var/www/weblibrary/index.php (13)
+2014/06/16 00:05:31 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT 't'."id" AS "t0_c0", 't'."name" AS "t0_c1", 'authors'."id" AS "t1_c0", 'authors'."name" AS "t1_c1" FROM 'book' 't'  LEFT OUTER JOIN 'catalog' 'authors_authors' ON ('t'."id"='authors_authors'."book_id") LEFT OUTER JOIN 'author' 'authors' ON ('authors'."id"='authors_authors'."author_id")  WHERE (t.name LIKE 'Пушкин%' OR author_author.name LIKE 'Пушкин%')
+in /var/www/weblibrary/protected/controllers/BookController.php (156)
+in /var/www/weblibrary/index.php (13)
+2014/06/16 00:05:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: author_author.name. The SQL statement executed was: SELECT 't'."id" AS "t0_c0", 't'."name" AS "t0_c1", 'authors'."id" AS "t1_c0", 'authors'."name" AS "t1_c1" FROM 'book' 't'  LEFT OUTER JOIN 'catalog' 'authors_authors' ON ('t'."id"='authors_authors'."book_id") LEFT OUTER JOIN 'author' 'authors' ON ('authors'."id"='authors_authors'."author_id")  WHERE (t.name LIKE 'Пушкин%' OR author_author.name LIKE 'Пушкин%').
+in /var/www/weblibrary/protected/controllers/BookController.php (156)
+in /var/www/weblibrary/index.php (13)
+2014/06/16 00:05:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: author_author.name. The SQL statement executed was: SELECT 't'."id" AS "t0_c0", 't'."name" AS "t0_c1", 'authors'."id" AS "t1_c0", 'authors'."name" AS "t1_c1" FROM 'book' 't'  LEFT OUTER JOIN 'catalog' 'authors_authors' ON ('t'."id"='authors_authors'."book_id") LEFT OUTER JOIN 'author' 'authors' ON ('authors'."id"='authors_authors'."author_id")  WHERE (t.name LIKE 'Пушкин%' OR author_author.name LIKE 'Пушкин%')' in /var/www/yii-1.1.14.f0fee9/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-1.1.14.f0fee9/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii-1.1.14.f0fee9/framework/db/ar/CActiveFinder.php(803): CDbCommand->queryAll()
+#2 /var/www/yii-1.1.14.f0fee9/framework/db/ar/CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /var/www/yii-1.1.14.f0fee9/framework/db/ar/CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 /var/www/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), false)
+#5 /var/www/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#6 /var/www/weblibrary/protected/controllers/BookController.php(156): CActiveRecord->find('t.name LIKE '??...')
+#7 /var/www/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): BookController->actionIndex()
+#8 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/www/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('index')
+#17 /var/www/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('book/index')
+#18 /var/www/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/weblibrary/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/weblibrary/index.php?r=book/index
+HTTP_REFERER=http://localhost/weblibrary/index.php?r=book/index
+---
