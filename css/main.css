@@ -7,6 +7,11 @@ body
 	font: normal 10pt Arial,Helvetica,sans-serif;
 	background: #EFEFEF;
 }
+.actions
+{
+  float: right;
+  margin-bottom: 3px;
+}
 select
 {
   height: 35px;

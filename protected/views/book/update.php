@@ -7,7 +7,6 @@ $this->breadcrumbs=array(
 	$model->name=>array('view','id'=>$model->id),
 	'Редактировать',
 );
-
 ?>
 
 <h1>Редактировать</h1>

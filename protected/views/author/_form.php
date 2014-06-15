@@ -24,8 +24,21 @@
 		<?php echo $form->error($model,'name'); ?>
   </div>
 
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить',array('class' => 'ui blue submit button')); ?>
+	<div class='ui buttons'>
+<?php echo CHtml::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить',array('class' => 'ui blue button'));?>
+<?php
+        if (!$model->isNewRecord)
+        {
+          echo "<div class='or'></div>";
+          echo CHtml::link(
+            'Удалить',
+            array('author/delete','id'=>$model->id),
+            array('confirm' => 'Удалить?', 'class' => 'ui red button')
+          );
 
+
+        }
+?>
 <?php $this->endWidget(); ?>
 
 </div>
