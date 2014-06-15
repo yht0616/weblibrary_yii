@@ -2729,3 +2729,6 @@ Stack trace:
 REQUEST_URI=/weblibrary/index.php?r=book/delete&id=28
 HTTP_REFERER=http://localhost/weblibrary/index.php?r=book/update&id=28
 ---
+2014/06/16 02:37:57 [warning] [application] Failed to set unsafe attribute "author" of "Book".
+in /var/www/weblibrary/protected/controllers/BookController.php (78)
+in /var/www/weblibrary/index.php (13)
